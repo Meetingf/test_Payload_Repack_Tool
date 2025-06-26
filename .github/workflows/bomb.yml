@@ -47,6 +47,7 @@ jobs:
         rm -rf SYSTEM/*
         cp system/system/build.prop SYSTEM
         sed -i -e '/ro.product.system.device/d' -e 's/ro.product.vendor.device/ro.product.system.device/g' SYSTEM/build.prop
+        echo "ro.product.brand=Redmi\nro.product.device=vermeer\nro.product.manufacturer=Xiaomi\nro.product.model=23113RKC6C\nro.product.name=vermeer" >> SYSTEM/build.prop
         rm -rf system
         ls IMAGES/*.img > META/ab_partitions.txt
         sed -i 's/IMAGES\///g' META/ab_partitions.txt
