@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
      ROM_URL:
-        description: 'ColorOS ROM'
+        description: 'HyperOS ROM'
         required: true
 
 jobs:
@@ -48,6 +48,11 @@ jobs:
         cp system/system/build.prop SYSTEM
         sed -i -e '/ro.product.system.device/d' -e 's/ro.product.vendor.device/ro.product.system.device/g' SYSTEM/build.prop
         echo -e "ro.product.brand=Redmi\nro.product.device=vermeer\nro.product.manufacturer=Xiaomi\nro.product.model=23113RKC6C\nro.product.name=vermeer" >> SYSTEM/build.prop
+        echo -e "ro.product.odm.brand=Redmi\nro.product.odm.device=vermeer\nro.product.odm.manufacturer=Xiaomi\nro.product.odm.model=23113RKC6C\nro.product.odm.name=vermeer" >> SYSTEM/build.prop
+        echo -e "ro.product.product.brand=Redmi\nro.product.product.device=vermeer\nro.product.product.manufacturer=Xiaomi\nro.product.product.model=23113RKC6C\nro.product.product.name=vermeer" >> SYSTEM/build.prop
+        echo -e "ro.product.system.brand=Redmi\nro.product.system.device=vermeer\nro.product.system.manufacturer=Xiaomi\nro.product.system.model=23113RKC6C\nro.product.system.name=vermeer" >> SYSTEM/build.prop
+        echo -e "ro.product.system_ext.brand=Redmi\nro.product.system_ext.device=vermeer\nro.product.system_ext.manufacturer=Xiaomi\nro.product.system_ext.model=23113RKC6C\nro.product.system_ext.name=vermeer" >> SYSTEM/build.prop
+        echo -e "ro.product.vendor.brand=Redmi\nro.product.vendor.device=vermeer\nro.product.vendor.manufacturer=Xiaomi\nro.product.vendor.model=23113RKC6C\nro.product.vendor.name=vermeer" >> SYSTEM/build.prop
         cat SYSTEM/build.prop
         rm -rf system
         ls IMAGES/*.img > META/ab_partitions.txt
