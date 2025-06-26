@@ -1,6 +1,6 @@
 virtual_ab=true
-super_partition_size=16642998272
-super_qti_dynamic_partitions_group_size=16638803968
+super_partition_size=9663676416
+super_qti_dynamic_partitions_group_size=9663676416
 super_partition_groups=qti_dynamic_partitions
 
 #virtual_ab_compression=false
